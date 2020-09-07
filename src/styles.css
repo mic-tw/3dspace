@@ -1,0 +1,73 @@
+:root {
+  --cube-sze: 100px;
+  --cube-sze-neg: -100px;
+}
+
+.App {
+  font-family: sans-serif;
+  text-align: center;
+  padding: 150px;
+}
+
+.control {
+  position: relative;
+  left: -250px;
+  top: -150px;
+}
+
+.space {
+  transform-style: preserve-3d;
+}
+
+.cube {
+  transition: 3s;
+  transform-style: preserve-3d;
+  position: relative;
+  display: inline-flex;
+  width: calc(2 * var(--cube-sze));
+  height: calc(2 * var(--cube-sze));
+}
+
+.block {
+  width: calc(2 * var(--cube-sze));
+  height: calc(2 * var(--cube-sze));
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+}
+
+.face {
+  background: rgba(255, 200, 200, 0.7);
+  transform: translateZ(0);
+}
+
+.back {
+  background: rgba(100, 100, 100, 0.7);
+  transform: rotateY(180deg) translateZ(calc(2 * var(--cube-sze)));
+}
+
+.left {
+  background: rgba(0, 164, 255, 0.7);
+  transform: rotateY(90deg) translateZ(var(--cube-sze-neg))
+    translateX(var(--cube-sze));
+}
+
+.right {
+  background: rgba(0, 258, 0, 0.7);
+  transform: rotateY(-90deg) translateZ(var(--cube-sze-neg))
+    translateX(var(--cube-sze-neg));
+}
+
+.top {
+  background: rgba(255, 0, 0, 0.7);
+  transform: rotateX(-90deg) translateZ(var(--cube-sze-neg))
+    translateY(var(--cube-sze));
+}
+
+.bottom {
+  background: rgba(170, 83, 98, 0.7);
+  transform: rotateX(90deg) translateZ(var(--cube-sze-neg))
+    translateY(var(--cube-sze-neg));
+}
